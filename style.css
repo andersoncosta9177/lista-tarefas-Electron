@@ -1,0 +1,67 @@
+.card-todo{
+    background-color:  blueviolet;
+    max-width: 800px;
+    margin-left: 10px;
+   
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.card-todo h2{
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.card-todo input{
+    align-content: center;
+    align-items: center;
+    border: none;
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow:  4px 4px 6px rgb(60, 59, 59);
+}
+
+.card-todo span{
+    width: 75px;
+    height:  45px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 600;
+    box-shadow:  4px 4px 6px rgb(60, 59, 59);
+}
+
+ul{
+    text-align: center;
+    margin: 20px 10px auto 10px;
+    border-radius: 12px;
+    padding: 12px;
+    background-color:  #BA55D3;
+    max-width: 800px;
+}
+
+ul li{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    color: white;
+}
+
+.close{
+    background-color: rgb(40, 39, 39);
+    padding: 0 3px 0 3px ;
+    margin-left: 8px;
+    border-radius:3px;
+    color: white;
+    
+    box-shadow: 2px 2px 2px rgb(57, 57, 57);
+    
+}

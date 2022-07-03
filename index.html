@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto electron</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card-todo">
+        <h2>Oque vou fazer hoje?</h2>
+        <input onkeyup="addNewTodo(event)" type="text" name="" id="inputTodo" placeholder="Escreva sua tarefa">
+        <span onclick="addNewTodo()" class="btn_add">Adicionar</span>
+    </div>
+
+    <ul id="ulTodo">
+        <li class="checked">Estudar electron</li>
+        <li class="checked">Estudar javascript</li>
+        <li class="checked">Estudar Ingles</li>
+
+
+    </ul>
+
+
+    <script>
+        const myNodeList = document.querySelectorAll("li")
+        myNodeList.forEach((_, index) => {
+            let span = document.createElement("span")
+            let iconDelete = document.createTextNode("\u00D7")
+            span.className = "close"
+            span.appendChild(iconDelete)
+            myNodeList[index].appendChild(span)
+        })
+
+        const closesButton = document.querySelectorAll(".close")
+
+        closesButton.forEach((_, index) => {
+            closesButton[index].onclick = function () {
+                const div = this.parentElement
+                div.style.display = "none"
+            }
+        })
+
+        const todolist = document.querySelector("ul")
+        todolist.addEventListener(
+            "click",
+            function (e) {
+                if (e.target.tagName === "li") {
+                    e.target.classList.toggle("checked")
+                }
+            },
+
+            false
+        )
+
+        function addNewTodo(event) {
+            if (event && event.KeyCode !== 13) return
+
+           
+           const li = document.createElement("li")
+           const inputTodo = document.getElementById("inputTodo").value
+           let t = document.createTextNode(inputTodo)
+            li.appendChild(t)
+            if (inputTodo === "") {
+                alert("Digite uma tarefa!")
+            } else {
+                document.getElementById("ulTodo").appendChild(li)
+            }
+            document.getElementById("inputTodo").value = ""
+
+            const span = document.createElement("span")
+            const iconDelete = document.createTextNode("\u00D7")
+            span.className = "close"
+            span.appendChild(iconDelete)
+            li.appendChild(span)
+            span.onclick =  function(){
+                const div = this.parentElement
+                div.style.display = "none"
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
